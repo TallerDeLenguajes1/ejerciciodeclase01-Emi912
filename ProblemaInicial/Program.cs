@@ -9,7 +9,9 @@ namespace ProblemaInicial
             var random = new Random();
             int numAleatorio  = random.Next(0, 100);
             Console.WriteLine("Escribe un numero");
-            int numElegido = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                 int numElegido = Convert.ToInt32(Console.ReadLine());
 
             do
             { 
@@ -30,6 +32,12 @@ namespace ProblemaInicial
             {
                 Console.WriteLine("El numero es correcto");
             }
+            }
+            catch (System.Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message + "\n StackTrace: "  +  ex.StackTrace);
+            }
+           
         }
     }
 }
